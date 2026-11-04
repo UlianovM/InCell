@@ -1,0 +1,105 @@
+:root {
+    --header-height: 8rem;
+    --side-width: 20rem;
+
+    --hue: 290;
+    --chroma: 2.0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-color:
+        oklch(35% calc(var(--chroma) * 0.02) var(--hue))
+        oklch(25% calc(var(--chroma) * 0.01) var(--hue));
+
+    font-family: "Noto Sans", sans-serif;
+    color: oklch(80% calc(var(--chroma) * 0.01) var(--hue));
+    background: oklch(20% calc(var(--chroma) * 0.01) var(--hue));
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    height: var(--header-height);
+
+    background-color: oklch(25% calc(var(--chroma) * 0.01) var(--hue));
+    border-bottom: 1px solid oklch(20% calc(var(--chroma) * 0.01) var(--hue));
+}
+
+header .top-left {
+    width: var(--side-width);
+    flex-shrink: 0;
+}
+
+header .top {
+    flex: 1;
+    box-sizing: content-box;
+    border-left: 1px solid oklch(20% calc(var(--chroma) * 0.01) var(--hue));
+}
+
+div.logo {
+    width: 100%;
+    height: 7rch;
+    padding: 1rch 2rch 0 2rch;
+}
+
+.logo h1 {
+    font-size: 4rch;
+    font-weight: bold;
+}
+
+div.stats {
+    width: 100%;
+    height: calc(var(--header-height) - 7rch);
+    padding: 0 2rch 1rch 2rch;
+}
+
+div.stats h2 {
+    font-size: 2rch;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    display: inline-block;
+    flex-shrink: 0;
+    width: var(--side-width);
+    height: 100vh;
+    background-color: oklch(25% calc(var(--chroma) * 0.01) var(--hue));
+}
+
+.content {
+    display: flex;
+
+    padding: 1rch 1rch;
+
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.box {
+    display: inline-block;
+    position: relative;
+    height: 42rch;
+    max-width: 100%;
+    margin: 1rch;
+    box-sizing: border-box;
+}
+
+.box img {
+    height: 100%;
+    /* opacity: 20%; */
+}
