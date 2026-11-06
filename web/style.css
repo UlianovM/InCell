@@ -93,7 +93,7 @@ main {
 .box {
     display: inline-block;
     position: relative;
-    height: 42rch;
+    height: 38rch;
     max-width: 100%;
     margin: 1rch;
     box-sizing: border-box;
@@ -101,5 +101,4 @@ main {
 
 .box img {
     height: 100%;
-    /* opacity: 20%; */
 }
