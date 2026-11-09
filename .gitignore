@@ -1,4 +1,4 @@
 data/
 .vscode/
+__pycache__/
 TODO.md
-app/__pycache__/

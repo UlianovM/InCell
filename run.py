@@ -1,5 +1,6 @@
+import app.connection as cons
+import app.requests as req
 from flask import Flask, Response, g, render_template, url_for, send_from_directory, abort
-import app.database as db
 import os
 
 
@@ -15,7 +16,7 @@ webp_path = pt.join(data_path, "webp")
 
 
 app = Flask(__name__, static_folder="web", template_folder="templates")
-db.get_conn()
+cons.init_conn()
 
 
 
@@ -27,9 +28,9 @@ def main():
 
 @app.route("/get/<image_hash>")
 def get(image_hash: str) -> Response:
-    db.get_conn()
+    cons.get_conn()
 
-    image_path = db.get_source_by_hash(g.db, image_hash)
+    image_path = req.get_source_ext(g.db, image_hash)
     
     if image_path is None:
         abort(404)
@@ -40,7 +41,7 @@ def get(image_hash: str) -> Response:
 
 @app.teardown_appcontext
 def close_conn(error) -> None:
-    db.close_conn()
+    cons.close_conn()
 
 
 

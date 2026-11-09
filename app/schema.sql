@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS cells (
     ext    TEXT    NOT NULL,
     width  INTEGER,
     height INTEGER,
-    size   INTEGER NOT NULL,
+    weight INTEGER NOT NULL,
     added  TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     extra  TEXT
 );

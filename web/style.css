@@ -93,10 +93,12 @@ main {
 .box {
     display: inline-block;
     position: relative;
-    height: 38rch;
+    /* height: 38rch; */
+    height: 360px;
     max-width: 100%;
     margin: 1rch;
     box-sizing: border-box;
+    background-color: #f0f;
 }
 
 .box img {
