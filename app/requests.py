@@ -1,5 +1,6 @@
 from .cell import Cell
-from sqlite3 import Connection, Cursor
+from typing import List
+from sqlite3 import Connection, Cursor, Row
 
 
 
@@ -7,6 +8,11 @@ def add_cell(cursor: Cursor|Connection, cell: Cell) -> None:
     command = "INSERT INTO cells (type, hash, ext, width, height, weight, extra) "\
         "VALUES (?, ?, ?, ?, ?, ?, ?)"
     cursor.execute(command, cell)
+
+
+
+def gat_cells(cursor: Cursor) -> List[Row]:
+    return cursor.execute("SELECT hash, width, height, extra FROM cells").fetchall()
 
 
 

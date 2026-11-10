@@ -26,7 +26,7 @@
         <div class="content">
             {% for cell in cells %}
                 <div class="box">
-                    <img src="{{cell[0]}}" alt="{{cell[1]}}">
+                    <img src="thumbnail/{{cell['hash']}}" alt="{{cell['extra']['filename']}}" width="{{cell['width']}}" height="{{cell['height']}}" loading="lazy">
                 </div>
             {% endfor %}
         </div>
